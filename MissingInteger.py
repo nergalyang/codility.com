@@ -26,9 +26,13 @@
 
 
 def solution(A):
-    for i in range(1,len(A)+1):
-        if i not in A:
-            return i
-    return len(A)+1
-
+    N = len(A)
+    list = [False] * (N+1)
+    for ele in A:
+        if 1 <= ele <= N:
+            list[ele] = True
+    for k in range(1,N+1):
+        if list[k] == False:
+            return k
+    return N+1
     
