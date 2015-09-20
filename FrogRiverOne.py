@@ -46,7 +46,6 @@
 # expected worst-case space complexity is O(X), beyond input storage (not counting the storage required for input arguments).
 # Elements of input arrays can be modified.
 
-
 def solution(X, A):
     s = []
     for i in range(1,X+1):
@@ -59,4 +58,6 @@ def solution(X, A):
             if not s:
                 break
         count += 1
+    if s:
+        return -1
     return count
