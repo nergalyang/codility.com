@@ -47,17 +47,13 @@
 # Elements of input arrays can be modified.
 
 def solution(X, A):
-    s = []
-    for i in range(1,X+1):
-        s.append(i)
-    count = 0
-
-    for ele in A:
-        if ele in s:
-            s.remove(ele)
-            if not s:
-                break
-        count += 1
-    if s:
-        return -1
-    return count
+    N = len(A)
+    list = [0] * (X+1)
+    total = 0
+    for i in xrange(N):
+        if list[A[i]] == 0:
+            total += 1
+        if total == X:
+            return i
+        list[A[i]]= 1
+    return -1
