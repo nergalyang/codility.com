@@ -51,11 +51,15 @@
 
 
 def solution(A):
-    sum = 0
-    for i in range(1,len(A)+1):
-        sum += i
-    for ele in A:
-        sum -= ele
-    if sum == 0:
-        return 1
-    return 0
+    N = len(A)
+    list = [0]*(N+1)
+    for i in range(N):
+        if A[i] <=N:
+           list[A[i]] += 1
+        else:
+            return 0
+    list = list[1:]
+    for ele in list:
+        if ele != 1:
+            return 0
+    return 1
