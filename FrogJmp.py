@@ -28,7 +28,8 @@
 # expected worst-case space complexity is O(1).
 
 def solution(X, Y, D):
-    if X == Y:
-        return 0
-    k = int((Y-X)/D)
-    return k+1
+    distance = Y - X
+    if distance % D == 0:
+        return int(distance/D)
+    else:
+        return int(distance/D) + 1
