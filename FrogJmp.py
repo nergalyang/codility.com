@@ -28,11 +28,7 @@
 # expected worst-case space complexity is O(1).
 
 def solution(X, Y, D):
-    count = 0
-    A = X
-    while True:
-        if X >=Y:
-            return count
-            break
-        count += 1
-        X = A + count*D
+    if X == Y:
+        return 0
+    k = int((Y-X)/D)
+    return k+1
