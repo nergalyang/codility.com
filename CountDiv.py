@@ -19,8 +19,7 @@
 # expected worst-case space complexity is O(1).
 
 def solution(A, B, K):
-    count = 0
-    for i in range(A,B+1):
-        if i%K == 0:
-            count += 1
-    return count
+    if A%K == 0:
+        return (B-A)//K +1
+    else:
+        return (B-(A-A%K))//K
